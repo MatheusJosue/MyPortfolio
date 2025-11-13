@@ -1,0 +1,44 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Circle Background -->
+  <circle cx="150" cy="150" r="150" fill="url(#bgGradient)"/>
+  
+  <!-- Head -->
+  <circle cx="150" cy="85" r="38" fill="white" opacity="0.95"/>
+  
+  <!-- Body -->
+  <ellipse cx="150" cy="170" rx="55" ry="65" fill="white" opacity="0.95"/>
+  
+  <!-- Shoulders -->
+  <path d="M 95 145 Q 95 160 105 175 L 195 175 Q 205 160 205 145" fill="white" opacity="0.95"/>
+  
+  <!-- Face Details -->
+  <!-- Left Eye -->
+  <circle cx="130" cy="78" r="5" fill="url(#accentGradient)"/>
+  <circle cx="131" cy="77" r="2" fill="white"/>
+  
+  <!-- Right Eye -->
+  <circle cx="170" cy="78" r="5" fill="url(#accentGradient)"/>
+  <circle cx="171" cy="77" r="2" fill="white"/>
+  
+  <!-- Smile -->
+  <path d="M 135 92 Q 150 100 165 92" stroke="url(#accentGradient)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Accent Ring -->
+  <circle cx="150" cy="150" r="148" fill="none" stroke="white" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="280" cy="30" r="15" fill="white" opacity="0.2"/>
+  <circle cx="20" cy="270" r="12" fill="white" opacity="0.15"/>
+</svg>
