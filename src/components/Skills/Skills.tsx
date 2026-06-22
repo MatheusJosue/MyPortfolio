@@ -1,30 +1,58 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
-import { FaReact, FaNode, FaDocker, FaGit } from "react-icons/fa";
-import { SiTypescript, SiNextdotjs, SiJest } from "react-icons/si";
+import { FaDocker, FaGit, FaNode, FaReact } from "react-icons/fa";
+import { FiDatabase } from "react-icons/fi";
+import {
+  SiAngular,
+  SiDotnet,
+  SiJavascript,
+  SiLaravel,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 import styles from "./Skills.module.css";
 
 export const Skills = () => {
   const skills = [
     {
-      category: "Frontend Principal",
+      category: "Front-end",
       items: [
         { name: "React", icon: FaReact },
         { name: "Next.js", icon: SiNextdotjs },
         { name: "TypeScript", icon: SiTypescript },
-        { name: "Angular", icon: SiTypescript },
+        { name: "Angular", icon: SiAngular },
+        { name: "JavaScript", icon: SiJavascript },
+        { name: "Tailwind CSS", icon: SiTailwindcss },
       ],
     },
     {
-      category: "Ferramentas & Backend",
+      category: "Back-end, dados e DevOps",
       items: [
+        { name: ".NET", icon: SiDotnet },
+        { name: "Laravel", icon: SiLaravel },
         { name: "Node.js", icon: FaNode },
-        { name: "Git", icon: FaGit },
+        { name: "SQL Server", icon: FiDatabase },
+        { name: "MySQL", icon: SiMysql },
+        { name: "MongoDB", icon: SiMongodb },
         { name: "Docker", icon: FaDocker },
-        { name: "PHP/Laravel", icon: SiJest },
+        { name: "Git", icon: FaGit },
       ],
     },
+  ];
+
+  const practices = [
+    "APIs REST com Swagger e Postman",
+    "Autenticação com Keycloak, JWT e OAuth",
+    "Azure DevOps, GitLab CI/CD e Docker",
+    "Sistemas de backoffice e esteiras operacionais",
+    "Aplicações web e mobile com Ionic Framework",
+    "Scrum, Kanban e contato direto com clientes",
+    "Figma, responsividade e refinamento visual",
+    "Sustentação e evolução de sistemas críticos",
   ];
 
   const containerVariants = {
@@ -38,10 +66,11 @@ export const Skills = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.92, y: 16 },
     visible: {
       opacity: 1,
       scale: 1,
+      y: 0,
       transition: { duration: 0.5 },
     },
   };
@@ -56,48 +85,36 @@ export const Skills = () => {
           variants={containerVariants}
         >
           <div className={styles.header}>
+            <motion.span variants={itemVariants} className={styles.kicker}>
+              Competências técnicas
+            </motion.span>
             <motion.h2 variants={itemVariants} className={styles.title}>
-              Tecnologias & Competências
+              Stack full stack com front-end como ponto forte.
             </motion.h2>
-            <motion.div
-              variants={itemVariants}
-              className={styles.titleUnderline}
-            />
+            <motion.p variants={itemVariants} className={styles.subtitle}>
+              Experiência prática em interfaces modernas, back-ends integrados,
+              autenticação, bancos relacionais e pipelines de entrega.
+            </motion.p>
           </div>
 
-          <motion.p variants={itemVariants} className={styles.subtitle}>
-            Stack moderno e direcionado para performance, escalabilidade e
-            qualidade
-          </motion.p>
-
-          <motion.div
-            variants={containerVariants}
-            className={styles.categories}
-          >
-            {skills.map((category, categoryIdx) => (
+          <motion.div variants={containerVariants} className={styles.categories}>
+            {skills.map((category) => (
               <motion.div
-                key={categoryIdx}
+                key={category.category}
                 variants={itemVariants}
                 className={styles.category}
               >
                 <h3 className={styles.categoryTitle}>{category.category}</h3>
 
-                <motion.div
-                  className={styles.grid}
-                  variants={containerVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  {category.items.map((skill, idx) => {
+                <div className={styles.grid}>
+                  {category.items.map((skill) => {
                     const Icon = skill.icon;
                     return (
                       <motion.div
-                        key={idx}
+                        key={skill.name}
                         variants={itemVariants}
                         className={styles.skillCard}
-                        whileHover={{ scale: 1.05, y: -5 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={{ scale: 1.04, y: -6 }}
                       >
                         <div className={styles.iconWrapper}>
                           <Icon className={styles.icon} />
@@ -106,22 +123,17 @@ export const Skills = () => {
                       </motion.div>
                     );
                   })}
-                </motion.div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
 
           <motion.div variants={itemVariants} className={styles.additional}>
-            <h4 className={styles.additionalTitle}>Competências Adicionais</h4>
+            <h4 className={styles.additionalTitle}>Ferramentas, métodos e contextos</h4>
             <ul className={styles.list}>
-              <li>React Hooks e Context API</li>
-              <li>HTML5, CSS, JavaScript ES6+</li>
-              <li>REST APIs com OAuth e JWT</li>
-              <li>MySQL, SQL Server e bancos de dados</li>
-              <li>Metodologias Ágeis (Scrum)</li>
-              <li>Figma e Design System</li>
-              <li>Azure DevOps e CI/CD</li>
-              <li>Tailwind CSS, Bootstrap e responsividade</li>
+              {practices.map((practice) => (
+                <li key={practice}>{practice}</li>
+              ))}
             </ul>
           </motion.div>
         </motion.div>

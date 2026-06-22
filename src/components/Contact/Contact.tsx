@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { FiLinkedin, FiGithub, FiMail } from "react-icons/fi";
 import { BiLogoWhatsapp } from "react-icons/bi";
+import { FiDownload, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { SOCIAL_LINKS } from "@/utils/constants";
 import styles from "./Contact.module.css";
 
 export const Contact = () => {
@@ -30,26 +30,26 @@ export const Contact = () => {
     {
       icon: BiLogoWhatsapp,
       label: "WhatsApp",
-      value: "+55 (11) 95243-8640",
-      href: "https://wa.me/5511952438640",
+      value: "+55 (11) 93948-5971",
+      href: SOCIAL_LINKS.whatsapp,
     },
     {
       icon: FiLinkedin,
       label: "LinkedIn",
       value: "matheusxaviercerqueira",
-      href: "https://www.linkedin.com/in/matheusxaviercerqueira",
+      href: SOCIAL_LINKS.linkedin,
     },
     {
       icon: FiGithub,
       label: "GitHub",
       value: "MatheusJosue",
-      href: "https://github.com/MatheusJosue",
+      href: SOCIAL_LINKS.github,
     },
     {
       icon: FiMail,
       label: "Email",
-      value: "matheusjx@hotmail.com",
-      href: "mailto:matheusjx@hotmail.com",
+      value: SOCIAL_LINKS.email,
+      href: `mailto:${SOCIAL_LINKS.email}`,
     },
   ];
 
@@ -61,34 +61,34 @@ export const Contact = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
+          className={styles.shell}
         >
           <div className={styles.header}>
+            <motion.span variants={itemVariants} className={styles.kicker}>
+              Contato
+            </motion.span>
             <motion.h2 variants={itemVariants} className={styles.title}>
-              Vamos Conversar
+              Vamos conversar sobre produto, front-end ou sistemas web?
             </motion.h2>
-            <motion.div
-              variants={itemVariants}
-              className={styles.titleUnderline}
-            />
+            <motion.p variants={itemVariants} className={styles.intro}>
+              Estou aberto a oportunidades full stack com foco em front-end,
+              projetos web, backoffice, automações operacionais e produtos
+              digitais com integrações reais.
+            </motion.p>
           </div>
 
-          <motion.p variants={itemVariants} className={styles.intro}>
-            Estou sempre aberto a novas oportunidades e projetos interessantes.
-            Entre em contato através dos canais abaixo. Responderei em breve!
-          </motion.p>
-
           <motion.div variants={containerVariants} className={styles.grid}>
-            {contacts.map((contact, idx) => {
+            {contacts.map((contact) => {
               const Icon = contact.icon;
               return (
                 <motion.a
-                  key={idx}
+                  key={contact.label}
                   href={contact.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.card}
                   variants={itemVariants}
-                  whileHover={{ y: -5 }}
+                  whileHover={{ y: -6 }}
                 >
                   <div className={styles.iconWrapper}>
                     <Icon className={styles.icon} />
@@ -102,12 +102,19 @@ export const Contact = () => {
 
           <motion.div variants={itemVariants} className={styles.cta}>
             <p>
-              Prefere me enviar uma mensagem? Posso responder mais rapidamente
-              por email.
+              Prefere uma visão rápida da minha trajetória? Baixe meu currículo
+              em PDF ou me chame diretamente por email.
             </p>
-            <Link href="mailto:matheusjx@hotmail.com" className={styles.button}>
-              Enviar Email
-            </Link>
+            <div className={styles.actions}>
+              <a href={SOCIAL_LINKS.resume} download className={styles.button}>
+                Baixar currículo
+                <FiDownload />
+              </a>
+              <a href={`mailto:${SOCIAL_LINKS.email}`} className={styles.buttonSecondary}>
+                Enviar email
+                <FiMail />
+              </a>
+            </div>
           </motion.div>
         </motion.div>
       </div>

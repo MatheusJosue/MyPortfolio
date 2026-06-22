@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -17,24 +17,19 @@ export const Header = () => {
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <div className={styles.container}>
-          {/* Logo */}
           <Link href="/" className={styles.logo}>
-            <span className={styles.logoText}>Matheus Cerqueira</span>
+            <span className={styles.logoText}>Matheus Josue</span>
           </Link>
 
-          {/* Menu button - Mobile */}
           <button
             className={styles.menuButton}
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-label="Abrir ou fechar menu"
           >
             {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
 
-          {/* Navigation Links */}
-          <div
-            className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}
-          >
+          <div className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}>
             <Link href="#sobre" onClick={() => setIsMenuOpen(false)}>
               Sobre
             </Link>
@@ -49,7 +44,6 @@ export const Header = () => {
             </Link>
           </div>
 
-          {/* Theme Toggle */}
           <ThemeToggle />
         </div>
       </nav>

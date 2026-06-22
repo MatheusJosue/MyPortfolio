@@ -1,58 +1,41 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiArrowUpRight, FiLayers, FiRepeat, FiTrendingUp } from "react-icons/fi";
 import styles from "./Projects.module.css";
 
 export const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Sistemas Bancários - Shock IT",
+      title: "Esteira Automatizada - Grupo Matri",
       description:
-        "Desenvolvimento de aplicações front-end para o setor bancário com Next.js, entregando soluções modernas, seguras e de alta performance. Liderança técnica e mentoria de equipes.",
-      type: "Concluído",
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "JWT",
-        "Keycloak",
-        "Azure DevOps",
-      ],
-      image: "🏦",
-      link: "#",
-      github: "https://github.com/MatheusJosue",
+        "Plataforma operacional para compra e venda de precatórios, integrando robôs de consulta processual, enriquecimento de dados comerciais, gestão documental, contratos via Clicksign, validações jurídicas, KYC e acompanhamento do fluxo até etapas operacionais e financeiras.",
+      type: "2024 - Presente",
+      technologies: ["Next.js", "React", "TypeScript", "APIs REST", "MySQL", "Keycloak", "C#", ".NET", "Docker", "Azure DevOps"],
+      icon: FiRepeat,
+      link: "#contato",
     },
     {
       id: 2,
-      title: "Aplicações Fullstack - Ledi",
+      title: "Backoffice Bancário",
       description:
-        "Desenvolvimento de funcionalidades com HTML, CSS, JavaScript, PHP, Angular, React, React Native e Node.js. Criação de APIs RESTful seguras e pipelines Docker.",
-      type: "Concluído",
-      technologies: ["React", "Angular", "Node.js", "PHP", "Docker", "MySQL"],
-      image: "⚙️",
-      link: "#",
-      github: "https://github.com/MatheusJosue",
+        "Backoffice administrativo para centralizar e gerenciar dados dos clientes da Esteira Automatizada, incluindo documentos, status operacionais, consultas, informações cadastrais e ações internas relacionadas aos processos de precatórios.",
+      type: "2024 - Presente",
+      technologies: ["Next.js", "React", "TypeScript", "Keycloak", "JWT", "SQL Server", "APIs REST", "Docker", "Azure DevOps"],
+      icon: FiLayers,
+      link: "#contato",
     },
     {
       id: 3,
-      title: "Desenvolvimento Web - Acesso Web",
+      title: "Plataforma de Investimentos",
       description:
-        "Desenvolvimento de páginas web responsivas e otimizadas. Integração de componentes, administração de servidores e atendimento a clientes.",
-      type: "Concluído",
-      technologies: [
-        "HTML5",
-        "CSS",
-        "JavaScript",
-        "Bootstrap",
-        "jQuery",
-        "PHP",
-      ],
-      image: "🌐",
-      link: "#",
-      github: "https://github.com/MatheusJosue",
+        "Plataforma para gestão de investimentos relacionados à operação da Esteira Automatizada, com atuação no front-end e back-end em regras de negócio, integrações, consultas por documento, aportes, resgates e rotinas administrativas.",
+      type: "2024 - Presente",
+      technologies: ["Next.js", "React", "TypeScript", "Laravel", "MySQL", "APIs REST", "Autenticação", "Docker", "Azure DevOps"],
+      icon: FiTrendingUp,
+      link: "#contato",
     },
   ];
 
@@ -61,7 +44,7 @@ export const Projects = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.16,
       },
     },
   };
@@ -85,68 +68,73 @@ export const Projects = () => {
           variants={containerVariants}
         >
           <div className={styles.header}>
+            <motion.span variants={itemVariants} className={styles.kicker}>
+              Projetos relevantes
+            </motion.span>
             <motion.h2 variants={itemVariants} className={styles.title}>
-              Projetos Destacados
+              Produtos financeiros, backoffice e automação operacional.
             </motion.h2>
-            <motion.div
-              variants={itemVariants}
-              className={styles.titleUnderline}
-            />
+            <motion.p variants={itemVariants} className={styles.subtitle}>
+              Projetos recentes em que atuei no front-end e back-end, conectando
+              experiência do usuário, regras de negócio, autenticação, dados e
+              processos operacionais críticos.
+            </motion.p>
           </div>
 
-          <motion.p variants={itemVariants} className={styles.subtitle}>
-            Confira alguns dos meus projetos mais recentes. Todos desenvolvidos
-            com foco em performance, escalabilidade e experiência do usuário.
-          </motion.p>
-
           <motion.div variants={containerVariants} className={styles.grid}>
-            {projects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                className={styles.card}
-                whileHover={{ y: -10 }}
-              >
-                <div className={styles.imageWrapper}>
-                  <div className={styles.imagePlaceholder}>{project.image}</div>
-                </div>
-
-                <div className={styles.content}>
-                  <div className={styles.badge}>{project.type}</div>
-                  <h3 className={styles.cardTitle}>{project.title}</h3>
-                  <p className={styles.description}>{project.description}</p>
-
-                  <div className={styles.technologies}>
-                    {project.technologies.map((tech, idx) => (
-                      <span key={idx} className={styles.tech}>
-                        {tech}
-                      </span>
-                    ))}
+            {projects.map((project) => {
+              const Icon = project.icon;
+              return (
+                <motion.article
+                  key={project.id}
+                  variants={itemVariants}
+                  className={styles.card}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className={styles.cardTop}>
+                    <div className={styles.iconBadge}>
+                      <Icon />
+                    </div>
+                    <span className={styles.badge}>{project.type}</span>
                   </div>
 
-                  <div className={styles.links}>
-                    <Link href={project.link} className={styles.link}>
-                      <FiExternalLink size={18} />
-                      Ver Projeto
-                    </Link>
-                    <Link href={project.github} className={styles.link}>
-                      <FiGithub size={18} />
-                      GitHub
-                    </Link>
+                  <div className={styles.content}>
+                    <h3 className={styles.cardTitle}>{project.title}</h3>
+                    <p className={styles.description}>{project.description}</p>
+
+                    <div className={styles.technologies}>
+                      {project.technologies.map((tech) => (
+                        <span key={tech} className={styles.tech}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className={styles.links}>
+                      <Link href={project.link} className={styles.link}>
+                        Conversar sobre esse projeto
+                        <FiArrowUpRight size={18} />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.article>
+              );
+            })}
           </motion.div>
 
-          <motion.div variants={itemVariants} className={styles.cta}>
-            <p>Quer ver mais projetos ou discusso uma nova ideia?</p>
-            <Link href="#contato" className={styles.button}>
-              Vamos conversar
-            </Link>
-          </motion.div>
+          {/* <motion.div variants={itemVariants} className={styles.cta}>
+            <div>
+              <FiBriefcase />
+              <p>Quer conversar sobre os projetos, ver código ou avaliar uma oportunidade?</p>
+            </div>
+            <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className={styles.button}>
+              GitHub
+              <FiGithub />
+            </a>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>
   );
 };
+
