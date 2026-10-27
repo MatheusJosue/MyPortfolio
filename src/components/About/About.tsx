@@ -56,7 +56,7 @@ export const About = () => {
       period: "10/2024 - Presente",
       location: "São Paulo - SP",
       description:
-        "Projetos do setor financeiro com interfaces, fluxos operacionais, integrações, autenticação, APIs, melhorias de usabilidade, reuniões com clientes e apoio técnico a desenvolvedores.",
+        "Sistemas do setor financeiro usados por 500+ usuários: entreguei 100+ telas e módulos, reduzi o tempo de carregamento de 10s para 3s (-70%), implementei autenticação com Keycloak/JWT e mentorei 5 desenvolvedores e estagiários, além de reuniões com clientes e funcionalidades de back-end.",
       stack:
         "Next.js, React, TypeScript, Tailwind CSS, Laravel, JWT, Keycloak, SQL Server, Docker, Azure DevOps, Scrum e Swagger.",
     },
@@ -101,7 +101,7 @@ export const About = () => {
 
           <motion.div variants={itemVariants} className={styles.copyGrid}>
             <p className={styles.intro}>
-              Sou Desenvolvedor Full Stack com mais de 4 anos de experiência em
+              Sou Desenvolvedor Full Stack com 5 anos de experiência em
               aplicações web, atuando com Next.js, React, TypeScript, Laravel,
               .NET, APIs REST e bancos relacionais. Meu foco principal está em
               construir interfaces modernas, responsivas e sustentáveis.

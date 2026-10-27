@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Matheus Josue Xavier Cerqueira | Desenvolvedor Full Stack",
   description:
-    "Desenvolvedor Full Stack com 4+ anos de experiência em aplicações web, com foco em front-end, Next.js, React, TypeScript, Laravel, .NET e Azure DevOps.",
+    "Desenvolvedor Full Stack com 5 anos de experiência em aplicações web, com foco em front-end, Next.js, React, TypeScript, Laravel, .NET e Azure DevOps.",
   keywords: [
     "Desenvolvedor Full Stack",
     "Front-End Developer",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     title: "Matheus Josue Xavier Cerqueira | Desenvolvedor Full Stack",
     description:
-      "Full Stack com foco em front-end, 4+ anos de experiência e atuação em produtos financeiros, backoffice e plataformas de investimento.",
+      "Full Stack com foco em front-end, 5 anos de experiência e atuação em produtos financeiros, backoffice e plataformas de investimento.",
   },
 };
 

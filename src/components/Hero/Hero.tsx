@@ -44,7 +44,7 @@ export const Hero = () => {
         >
           <motion.div variants={itemVariants} className={styles.eyebrow}>
             <span className={styles.statusDot} />
-            São Paulo - SP | Full Stack com foco em front-end
+            Jundiaí - SP | Full Stack com foco em front-end
           </motion.div>
 
           <motion.h1 variants={itemVariants} className={styles.title}>
@@ -52,7 +52,7 @@ export const Hero = () => {
           </motion.h1>
 
           <motion.p variants={itemVariants} className={styles.subtitle}>
-            Desenvolvedor Full Stack com 4+ anos em aplicações web, produtos
+            Desenvolvedor Full Stack com 5 anos em aplicações web, produtos
             financeiros e interfaces modernas.
           </motion.p>
 
@@ -86,12 +86,12 @@ export const Hero = () => {
 
           <motion.div variants={itemVariants} className={styles.stats}>
             <div className={styles.stat}>
-              <span className={styles.number}>4+</span>
+              <span className={styles.number}>5</span>
               <span className={styles.label}>anos de experiência</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.number}>Fintech</span>
-              <span className={styles.label}>backoffice, esteiras e investimentos</span>
+              <span className={styles.number}>500+</span>
+              <span className={styles.label}>usuários em sistemas financeiros</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.number}>Stack</span>
