@@ -52,16 +52,16 @@ export const Hero = () => {
           </motion.h1>
 
           <motion.p variants={itemVariants} className={styles.subtitle}>
-            Desenvolvedor Full Stack com 5 anos em aplicações web, produtos
-            financeiros e interfaces modernas.
+            Desenvolvedor Full Stack com 5 anos criando aplicações web, SaaS,
+            sistemas internos e interfaces modernas.
           </motion.p>
 
           <motion.p variants={itemVariants} className={styles.description}>
             Atuo principalmente no front-end com Next.js, React, TypeScript,
             Angular, Tailwind CSS e Bootstrap, conectando interfaces a APIs REST,
             autenticação com Keycloak/JWT e back-ends em Laravel, .NET e Node.js.
-            Tenho experiência com backoffice, esteiras operacionais, plataformas
-            de investimento, Docker, Azure DevOps e CI/CD.
+            Já entreguei sistemas financeiros, SaaS multi-tenant, PWAs e sites
+            institucionais, com Docker, Azure DevOps e CI/CD.
           </motion.p>
 
           <motion.div variants={itemVariants} className={styles.cta}>
@@ -91,7 +91,7 @@ export const Hero = () => {
             </div>
             <div className={styles.stat}>
               <span className={styles.number}>500+</span>
-              <span className={styles.label}>usuários em sistemas financeiros</span>
+              <span className={styles.label}>usuários em sistemas que desenvolvo</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.number}>Stack</span>
@@ -109,10 +109,10 @@ export const Hero = () => {
           <div className={styles.profileCard}>
             <div className={styles.profileFrame}>
               <Image
-                src="/profile.jpeg"
+                src="/profile-matheus.jpg"
                 alt="Foto de Matheus Josue Xavier Cerqueira"
-                width={360}
-                height={360}
+                width={400}
+                height={600}
                 priority
                 className={styles.profileImage}
               />

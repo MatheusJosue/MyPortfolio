@@ -72,8 +72,8 @@ export const Contact = () => {
             </motion.h2>
             <motion.p variants={itemVariants} className={styles.intro}>
               Estou aberto a oportunidades full stack com foco em front-end,
-              projetos web, backoffice, automações operacionais e produtos
-              digitais com integrações reais.
+              SaaS, sistemas internos e produtos digitais com integrações
+              reais, em qualquer segmento.
             </motion.p>
           </div>
 

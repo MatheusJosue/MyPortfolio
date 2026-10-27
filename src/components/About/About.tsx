@@ -38,9 +38,9 @@ export const About = () => {
         "Laravel, .NET, C#, PHP, Node.js, APIs REST, Swagger, Postman e bancos relacionais.",
     },
     {
-      title: "Financeiro e backoffice",
+      title: "Produtos de ponta a ponta",
       description:
-        "Experiência com sistemas críticos, esteiras operacionais, precatórios e plataformas de investimento.",
+        "SaaS multi-tenant, PWAs, sistemas internos, backoffices, plataformas financeiras e sites institucionais.",
     },
     {
       title: "Entrega e sustentação",
@@ -95,7 +95,7 @@ export const About = () => {
           <motion.div variants={itemVariants} className={styles.header}>
             <span className={styles.kicker}>Sobre mim</span>
             <h2 className={styles.title}>
-              Full Stack com base sólida em front-end e vivência em produtos financeiros.
+              Full Stack com base sólida em front-end, da interface à API.
             </h2>
           </motion.div>
 
@@ -107,11 +107,11 @@ export const About = () => {
               construir interfaces modernas, responsivas e sustentáveis.
             </p>
             <p className={styles.intro}>
-              Tenho experiência em projetos do setor financeiro, autenticação
-              com Keycloak/JWT, CI/CD, Docker e Azure DevOps. Trabalho de forma
-              hands-on em decisões técnicas, contato com clientes, sustentação
-              de sistemas críticos, backoffice, esteiras operacionais e
-              plataformas de investimento.
+              Já atuei em sistemas financeiros, aplicações corporativas, SaaS
+              e produtos para pequenos negócios, com autenticação Keycloak/JWT,
+              testes, CI/CD, Docker e Azure DevOps. Trabalho de forma hands-on
+              em decisões técnicas, contato com clientes e sustentação de
+              sistemas críticos.
             </p>
           </motion.div>
 

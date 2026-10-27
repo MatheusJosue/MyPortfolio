@@ -2,40 +2,95 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FiArrowUpRight, FiLayers, FiRepeat, FiTrendingUp } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiBriefcase,
+  FiCalendar,
+  FiClock,
+  FiExternalLink,
+  FiGithub,
+  FiGlobe,
+  FiLock,
+  FiPieChart,
+} from "react-icons/fi";
+import type { IconType } from "react-icons";
 import styles from "./Projects.module.css";
 
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  type: string;
+  technologies: string[];
+  icon: IconType;
+  demo?: string;
+  repo?: string;
+};
+
 export const Projects = () => {
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
-      title: "Esteira Automatizada - Grupo Matri",
+      title: "Plataformas financeiras — Shock IT",
       description:
-        "Plataforma operacional para compra e venda de precatórios, integrando robôs de consulta processual, enriquecimento de dados comerciais, gestão documental, contratos via Clicksign, validações jurídicas, KYC e acompanhamento do fluxo até etapas operacionais e financeiras.",
-      type: "2024 - Presente",
-      technologies: ["Next.js", "React", "TypeScript", "APIs REST", "MySQL", "Keycloak", "C#", ".NET", "Docker", "Azure DevOps"],
-      icon: FiRepeat,
-      link: "#contato",
+        "Esteira operacional, backoffice e plataforma de investimentos usados por 500+ usuários. Entreguei 100+ telas e módulos, reduzi o carregamento de 10s para 3s e implementei autenticação com Keycloak.",
+      type: "Profissional",
+      technologies: ["Next.js", "React", "TypeScript", "Keycloak", "C#", ".NET", "Laravel", "SQL Server", "Azure DevOps"],
+      icon: FiBriefcase,
     },
     {
       id: 2,
-      title: "Backoffice Bancário",
+      title: "Agenda Pet",
       description:
-        "Backoffice administrativo para centralizar e gerenciar dados dos clientes da Esteira Automatizada, incluindo documentos, status operacionais, consultas, informações cadastrais e ações internas relacionadas aos processos de precatórios.",
-      type: "2024 - Presente",
-      technologies: ["Next.js", "React", "TypeScript", "Keycloak", "JWT", "SQL Server", "APIs REST", "Docker", "Azure DevOps"],
-      icon: FiLayers,
-      link: "#contato",
+        "SaaS multi-tenant para pet shops: agenda de banho e tosa, clientes, pets e planos, cadastro por convite e isolamento entre empresas com Row Level Security.",
+      type: "SaaS",
+      technologies: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Zod", "Vitest", "Playwright"],
+      icon: FiCalendar,
+      demo: "https://agendapetshop.vercel.app",
+      repo: "https://github.com/MatheusJosue/agenda-pet-shop",
     },
     {
       id: 3,
-      title: "Plataforma de Investimentos",
+      title: "Planilha Financeira",
       description:
-        "Plataforma para gestão de investimentos relacionados à operação da Esteira Automatizada, com atuação no front-end e back-end em regras de negócio, integrações, consultas por documento, aportes, resgates e rotinas administrativas.",
-      type: "2024 - Presente",
-      technologies: ["Next.js", "React", "TypeScript", "Laravel", "MySQL", "APIs REST", "Autenticação", "Docker", "Azure DevOps"],
-      icon: FiTrendingUp,
-      link: "#contato",
+        "Controle financeiro pessoal com dashboard, transações recorrentes automáticas, 5 gráficos de análise e exportação de relatórios em PDF.",
+      type: "Web app",
+      technologies: ["Next.js", "TypeScript", "Zustand", "Supabase", "Recharts", "jsPDF"],
+      icon: FiPieChart,
+      demo: "https://planilha-v2.vercel.app",
+      repo: "https://github.com/MatheusJosue/planilha-financeira-v2",
+    },
+    {
+      id: 4,
+      title: "Bar Control",
+      description:
+        "PWA mobile-first para bares controlarem a validade dos preparos internos, com alertas por status, estoque e API própria em Express.",
+      type: "PWA",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express", "Supabase"],
+      icon: FiClock,
+      demo: "https://bar-control-ui.vercel.app",
+      repo: "https://github.com/MatheusJosue/bar-control",
+    },
+    {
+      id: 5,
+      title: "GranPet",
+      description:
+        "Site institucional de pet shop com tabela de preços interativa por faixa de peso, botão de WhatsApp e SEO com sitemap e robots.",
+      type: "Site institucional",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      icon: FiGlobe,
+      demo: "https://gran-pet.vercel.app",
+      repo: "https://github.com/MatheusJosue/granPet",
+    },
+    {
+      id: 6,
+      title: "Next.js + Keycloak Auth",
+      description:
+        "Exemplo de autenticação e autorização com Keycloak via NextAuth: login OIDC, rotas protegidas, sessão tipada e cliente HTTP com token.",
+      type: "Autenticação",
+      technologies: ["Next.js", "TypeScript", "NextAuth", "Keycloak", "Axios"],
+      icon: FiLock,
+      repo: "https://github.com/MatheusJosue/nextjs-keycloak-auth",
     },
   ];
 
@@ -72,12 +127,12 @@ export const Projects = () => {
               Projetos relevantes
             </motion.span>
             <motion.h2 variants={itemVariants} className={styles.title}>
-              Produtos financeiros, backoffice e automação operacional.
+              De sistemas financeiros a SaaS para pequenos negócios.
             </motion.h2>
             <motion.p variants={itemVariants} className={styles.subtitle}>
-              Projetos recentes em que atuei no front-end e back-end, conectando
-              experiência do usuário, regras de negócio, autenticação, dados e
-              processos operacionais críticos.
+              Projetos profissionais e pessoais em que atuei no front-end e
+              back-end, conectando experiência do usuário, regras de negócio,
+              autenticação e dados. Os pessoais têm demo e código abertos.
             </motion.p>
           </div>
 
@@ -111,10 +166,24 @@ export const Projects = () => {
                     </div>
 
                     <div className={styles.links}>
-                      <Link href={project.link} className={styles.link}>
-                        Conversar sobre esse projeto
-                        <FiArrowUpRight size={18} />
-                      </Link>
+                      {project.demo && (
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                          Ver demo
+                          <FiExternalLink size={18} />
+                        </a>
+                      )}
+                      {project.repo && (
+                        <a href={project.repo} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                          Código
+                          <FiGithub size={18} />
+                        </a>
+                      )}
+                      {!project.demo && !project.repo && (
+                        <Link href="#contato" className={styles.link}>
+                          Conversar sobre esse projeto
+                          <FiArrowUpRight size={18} />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </motion.article>

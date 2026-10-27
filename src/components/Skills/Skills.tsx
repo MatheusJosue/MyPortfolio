@@ -48,7 +48,7 @@ export const Skills = () => {
     "APIs REST com Swagger e Postman",
     "Autenticação com Keycloak, JWT e OAuth",
     "Azure DevOps, GitLab CI/CD e Docker",
-    "Sistemas de backoffice e esteiras operacionais",
+    "Testes unitários e E2E com Vitest e Playwright",
     "Aplicações web e mobile com Ionic Framework",
     "Scrum, Kanban e contato direto com clientes",
     "Figma, responsividade e refinamento visual",

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     title: "Matheus Josue Xavier Cerqueira | Desenvolvedor Full Stack",
     description:
-      "Full Stack com foco em front-end, 5 anos de experiência e atuação em produtos financeiros, backoffice e plataformas de investimento.",
+      "Full Stack com foco em front-end e 5 anos de experiência em SaaS, sistemas financeiros, PWAs e aplicações web.",
   },
 };
 
